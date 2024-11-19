@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Programacion III</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+    <style>
+        #misdatos {
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        #buton{
+            text-align: center;
+            color: green;
+        }
+        body{
+            background-color: gray;
+        }
+        #let{
+            color: blue;
+        }
+        #lit{
+            color: aqua;
+            text-align: center;
+        }
+    </style>
+  </head>
+  
+  <body>
+    <!-- Elementos de HTML-->
+    <div id="lit">
+        <h1>Musify</h1>
+    </div>
+    <hr>
+
+    <div id="buton">
+        <button onclick="primerboton()">Cancion 1</button>
+        <button onclick="segundoboton()">Cancion 2</button>
+        <button onclick="tercerboton()">Cancion 3</button>
+        <button onclick="cuartoboton()">Cancion 4</button>
+        <button onclick="quintoboton()">Cancion 5</button>
+        <button onclick="sextoboton()">Cancion 6</button>
+    </div>
+
+    <div class="container">
+        <table id="tabla" data-height="460" data-auto-refresh="true">
+            <thead>
+                <tr>
+                    <th  data-field="NombreCancion">NombreCancion</th>
+                    <th  data-field="NombreDelArtista">NombreDelArtista</th>
+                    <th  data-field="Genero">Genero</th>
+                    <th  data-field="DuracionDeCancion">DuracionDeCancion</th>
+                    <th  data-field="ImagenDelArtista">ImagenDelArtista</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los datos se cargarán aquí -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="misdatos">
+        <h1 id="let">Angel Emmanuel Garcia Diaz</h1>    
+        <h1 id="let">angel.garcia2839@alumnos.udg.mx</h1>
+        <h1 id="let">Programacion</h1>
+        <h1 id="let">Preparatoria san Jose del Valle</h1>
+        <h1 id="let">Angel Emmanuel Sanchez Cuenca</h1>
+        <h1 id="let">Copyright © Todos los derechos reservados</h1>
+    </div>
+  
+    <script>
+        // Datos globales
+        var datos = [];
+
+        // Inicializa la tabla
+        $(function () {
+            $('#tabla').bootstrapTable({
+                data: datos,
+                formatNoMatches: function () {
+                    return 'No hay datos';
+                }
+            });
+        });
+
+        // Función para actualizar la tabla con los datos actuales
+        function muestraDatos() {
+            $('#tabla').bootstrapTable('load', datos); // Cargar los datos en la tabla
+        }
+
+        // Función del primer botón
+        function primerboton() {
+            var cancion1 = {
+                NombreCancion: "No puedo",
+                NombreDelArtista: "Paulo Ezequiel Londra",
+                Genero: "Pop,hip-hop/rap",
+                DuracionDeCancion: "2:58 min",
+                ImagenDelArtista: "<img width='100' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMbK4Im7nRJi6jj-Y5M4aen2nB-6cZdGJ-xQ&s'>"
+            };
+            datos.push(cancion1);
+            muestraDatos();
+        }
+
+        // Función para el segundo botón
+        function segundoboton() {
+            var cancion2 = {
+                NombreCancion: "La sin sentimientos",
+                NombreDelArtista: "Alex Ponce",
+                Genero: "Dembow",
+                DuracionDeCancion: "3:06 min",
+                ImagenDelArtista: "<img width='100' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvyVzhswgBM0V3XTw-IuDtLDXGmw_rWn4b8w&s'>"
+            };
+            datos.push(cancion2);
+            muestraDatos();
+        }
+
+        // Función para el tercer botón
+        function tercerboton() {
+            var cancion3 = {
+                NombreCancion: "Tu boda",
+                NombreDelArtista: "Oscar Maydon y Fuerza Regida",
+                Genero: "Regional mexicana",
+                DuracionDeCancion: "3:47 min",
+                ImagenDelArtista: "<img width='150' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYJZwKLt814OLRLbTMGOEdrYx7EhC0aEj_xg&s'>"
+            };
+            datos.push(cancion3);
+            muestraDatos();
+        }
+
+        // Función para el cuarto botón
+        function cuartoboton() {
+            var cancion4 = {
+                NombreCancion: "Demons",
+                NombreDelArtista: "Imagine Dragons",
+                Genero: "Rock",
+                DuracionDeCancion: "3:57 min",
+                ImagenDelArtista: "<img width='150' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXQebrZrJVFj52g3hJz1CTY-YrEbcehW1muQ&s'>"
+            };
+            datos.push(cancion4);
+            muestraDatos();
+        }
+
+        // Función para el quinto botón
+        function quintoboton() {
+            var cancion5 = {
+                NombreCancion: "Piensalo",
+                NombreDelArtista: "Junior H",
+                Genero: "Trap,Regueton latino,hip-hop",
+                DuracionDeCancion: "4:02 min",
+                ImagenDelArtista: "<img width='150' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT22poxNDmT0QHZa-jF2Ftgj0G3TxkZllE2wA&s'>"
+            };
+            datos.push(cancion5);
+            muestraDatos();
+        }
+
+        // Función para el sexto botón
+        function sextoboton() {
+            var cancion6 = {
+                NombreCancion: "3 pecados despues",
+                NombreDelArtista: "Milo j",
+                Genero: "Rap",
+                DuracionDeCancion: "1:58 min",
+                ImagenDelArtista: "<img width='150' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYbqb_jiqOIrkoRcmZ6TTt-9WS32FVSt5UBQ&s'>"
+            };
+            datos.push(cancion6);
+            muestraDatos();
+        }
+    </script>
+  </body>
+</html>
